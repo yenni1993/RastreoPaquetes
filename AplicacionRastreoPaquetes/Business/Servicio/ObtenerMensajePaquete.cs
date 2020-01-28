@@ -4,17 +4,29 @@ using System;
 
 namespace AplicacionRastreoPaquetes.Business.Servicio
 {
+    /// <summary>
+    /// Clase que permite obtener un mensaje de un paquete y que implementa de la interface IObtenerMensaje.
+    /// </summary>
     public class ObtenerMensajePaquete : IObtenerMensaje
     {
         private PaqueteriaDTO dtoPaquete;
-        private DateTime dtActual;          
+        private DateTime dtActual;
 
+        /// <summary>
+        /// Constructor de la clase.
+        /// </summary>
+        /// <param name="_dtoPaquete">DTO con los datos del paquete.</param>
+        /// <param name="_dtActual">Fecha del día de hoy.</param>
         public ObtenerMensajePaquete(PaqueteriaDTO _dtoPaquete, DateTime _dtActual)
         {
             this.dtoPaquete = _dtoPaquete;
             this.dtActual = _dtActual;
         }
 
+        /// <summary>
+        /// Método que permite obtener un mensaje.
+        /// </summary>
+        /// <returns>Mensaje obtenido.</returns>
         public string ObtenerMensaje()
         {
             string cMensaje = string.Empty;

@@ -3,15 +3,26 @@ using AplicacionRastreoPaquetes.Business.Interface;
 
 namespace AplicacionRastreoPaquetes.Business.Servicio
 {
+    /// <summary>
+    /// Clase del director de la empresa.
+    /// </summary>
     public class DirectorEmpresa
     {
         private IConstructorPaquete IConstructorPaquete;
 
+        /// <summary>
+        /// Constructor de la clase.
+        /// </summary>
+        /// <param name="_IConstructorPaquete">Interface del constructor del paquete.</param>
         public DirectorEmpresa(IConstructorPaquete _IConstructorPaquete)
         {
             this.IConstructorPaquete = _IConstructorPaquete;
         }
 
+        /// <summary>
+        /// Método que permite enviar el paquete de la empresa Fedex en Barco.
+        /// </summary>
+        /// <param name="_dtoPaquete">DTO con los datos del paquete.</param>
         public void EnviarPaquetePorFedexEnBarco(PaqueteriaDTO _dtoPaquete)
         {
             if (_dtoPaquete == null)
@@ -28,6 +39,10 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
             this.IConstructorPaquete.AsignarCostoEnvio(_dtoPaquete);
         }
 
+        /// <summary>
+        /// Método que permite enviar el paquete de la empresa DHL en Avión.
+        /// </summary>
+        /// <param name="_dtoPaquete">DTO con los datos del paquete.</param>
         public void EnviarPaquetePorDhlEnAvion(PaqueteriaDTO _dtoPaquete)
         {
             if (_dtoPaquete == null)
@@ -44,6 +59,10 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
             this.IConstructorPaquete.AsignarCostoEnvio(_dtoPaquete);
         }
 
+        /// <summary>
+        /// Método que permite enviar el paquete de la empresa DHL en Barco.
+        /// </summary>
+        /// <param name="_dtoPaquete">DTO con los datos del paquete.</param>
         public void EnviarPaquetePorDhlEnBarco(PaqueteriaDTO _dtoPaquete)
         {
             if (_dtoPaquete == null)
@@ -60,6 +79,10 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
             this.IConstructorPaquete.AsignarCostoEnvio(_dtoPaquete);
         }
 
+        /// <summary>
+        /// Método que permite enviar el paquete de la empresa Estafeta en Tren.
+        /// </summary>
+        /// <param name="_dtoPaquete">DTO con los datos del paquete.</param>
         public void EnviarPaquetePorEstafetaEnTren(PaqueteriaDTO _dtoPaquete)
         {
             if (_dtoPaquete == null)

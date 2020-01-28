@@ -5,8 +5,15 @@ using System.Collections.Generic;
 
 namespace AplicacionRastreoPaquetes.Business.Servicio
 {
+    /// <summary>
+    /// Clase del cliente.
+    /// </summary>
     public class Cliente
     {
+        /// <summary>
+        /// Método que permite aplicar el rastreo de paquetes.
+        /// </summary>
+        /// <param name="_lstContenidoArchivo">Lista con el contenido del archivo a leer.</param>
         public void AplicarRastreoPaquete(List<string> _lstContenidoArchivo)
         {
             //DTO.
@@ -96,6 +103,11 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
             }
         }
 
+        /// <summary>
+        /// Método que permite leer el contenido de un archivo dada la ruta especificada.
+        /// </summary>
+        /// <param name="_cRuta">Ruta donde se encuentra el archivo.</param>
+        /// <returns>Lista con el contenido del archivo.</returns>
         public List<string> LeerArchivo(string _cRuta)
         {
             ILectorArchivo ILectorArchivo = new LeerArchivo();
@@ -105,6 +117,12 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
             return lstContenidoArchivo;
         }
 
+        /// <summary>
+        /// Método que permite colorear el mensaje que se muestra en el sistema.
+        /// </summary>
+        /// <param name="_dtoPaquete">DTO con los datos del paquete.</param>
+        /// <param name="_dtActual">Fecha del día de hoy.</param>
+        /// <param name="_cMensaje">Texto del mensaje que se va a colorear.</param>
         public void ColorearMensajePaquete(PaqueteriaDTO _dtoPaquete, DateTime _dtActual, string _cMensaje)
         {
             if (!string.IsNullOrWhiteSpace(_cMensaje))
@@ -128,6 +146,10 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
             }
         }
 
+        /// <summary>
+        /// Método que permite colorear el mensaje que se muestra en el sistema.
+        /// </summary>
+        /// <param name="_cMensaje">Texto del mensaje que se va a colorear.</param>
         public void ColorearMensajeError(string _cMensaje)
         {
             if (!string.IsNullOrWhiteSpace(_cMensaje))

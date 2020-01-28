@@ -2,8 +2,16 @@
 
 namespace AplicacionRastreoPaquetes.Business.Servicio
 {
+    /// <summary>
+    /// Clase que permite manejar el rango del tiempo en meses y que implementa de la interface ManejadorRangoTiempo.
+    /// </summary>
     public class ManejadorRangoTiempoMeses : ManejadorRangoTiempo
     {
+        /// <summary>
+        /// Método sobreescrito que permite obtener el rango del tiempo en meses.
+        /// </summary>
+        /// <param name="_tsDiferenciaFecha">Diferencia que existe entre una fecha u otra.</param>
+        /// <returns>Duración y nombre del formato de fechas del rango del tiempo. Ejemplo: 1 mes.</returns>
         public override string ObtenerRangoTiempo(TimeSpan _tsDiferenciaFecha)
         {
             int iTotalMeses = 0;

@@ -5,8 +5,16 @@ using System.IO;
 
 namespace AplicacionRastreoPaquetes.Business.Servicio
 {
+    /// <summary>
+    /// Clase que permite leer un archivo y que implementa de la interface ILectorArchivo.
+    /// </summary>
     public class LeerArchivo : ILectorArchivo
     {
+        /// <summary>
+        /// Método que permite leer el contenido de un archivo dada la ruta especificada.
+        /// </summary>
+        /// <param name="_cRuta">Ruta donde se encuentra el archivo.</param>
+        /// <returns>Lista con el contenido del archivo.</returns>
         public List<string> LeerContenidoArchivo(string _cRuta)
         {
             List<string> lstLineaArchivo = new List<string>();
