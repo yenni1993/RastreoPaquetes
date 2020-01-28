@@ -5,8 +5,15 @@ using System.Collections.Generic;
 
 namespace AplicacionRastreoPaquetes.Business.Servicio
 {
+    /// <summary>
+    /// Clase que permite buscar medios de transporte y que implementa de la interface IBuscadorMedioTransporte.
+    /// </summary>
     public class BuscadorMedioTransporte : IBuscadorMedioTransporte
     {
+        /// <summary>
+        /// Método que permite buscar un listado de medios de transporte.
+        /// </summary>
+        /// <returns>Lista DTO con los datos de la paquetería y sus medios de transporte.</returns>
         public List<PaqueteriaDTO> BuscarListaMedioTransporteConEmpresa()
         {
             List<PaqueteriaDTO> lstPaqueteriaDTO = new List<PaqueteriaDTO>();
@@ -33,6 +40,11 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
             return lstPaqueteriaDTO;
         }
 
+        /// <summary>
+        /// Método que permite buscar un listado de medios de transporte por empresa de paquetería.
+        /// </summary>
+        /// <param name="_cNombreEmpresa">Nombre de la empresa de paquetería.</param>
+        /// <returns>Lista de nombres de medios de transporte.</returns>
         public List<string> BuscarListaMedioTransportePorEmpresa(string _cNombreEmpresa)
         {
             List<string> lstNombreMedioTransporte = new List<string>();

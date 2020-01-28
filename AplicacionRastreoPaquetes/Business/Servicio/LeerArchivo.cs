@@ -1,12 +1,13 @@
-﻿using System;
+﻿using AplicacionRastreoPaquetes.Business.Interface;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
 namespace AplicacionRastreoPaquetes.Business.Servicio
 {
-    public class LectorArchivo
+    public class LeerArchivo : ILectorArchivo
     {
-        public List<string> LeerArchivo(string _cRuta)
+        public List<string> LeerContenidoArchivo(string _cRuta)
         {
             List<string> lstLineaArchivo = new List<string>();
 

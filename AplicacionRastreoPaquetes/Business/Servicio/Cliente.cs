@@ -19,6 +19,7 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
             ManejadorRangoTiempo srvManejadorRangoTiempoHoras = new ManejadorRangoTiempoHoras();
             ManejadorRangoTiempo srvManejadorRangoTiempoMinutos = new ManejadorRangoTiempoMinutos();
             //Interface.
+            IAsignadorDatosPaquete IAsignadorDatosPaquete;
             IBuscadorEmpresaPaqueteria IBuscadorEmpresaPaqueteria;
             IBuscadorMedioTransporte IBuscadorMedioTransporte;
             IObtenerMensaje IObtenerMensaje;
@@ -66,8 +67,8 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
 
                     if (string.IsNullOrWhiteSpace(cMensaje))
                     {
-                        AsignarDatosPaquete srvAsignarDatosPaquete = new AsignarDatosPaquete();
-                        dtoPaqueteriaActualizado = srvAsignarDatosPaquete.AsignarNuevosDatos(dtoPaqueteria);//Patrón de diseño: Constructor.
+                        IAsignadorDatosPaquete = new AsignarDatosPaquete();
+                        dtoPaqueteriaActualizado = IAsignadorDatosPaquete.AsignarNuevosDatos(dtoPaqueteria);//Patrón de diseño: Constructor.
 
                         tsDiferencia = (dtActual - dtoPaqueteriaActualizado.dtEntrega);
                         srvManejadorRangoTiempoMeses = new ManejadorRangoTiempoMeses();
@@ -97,10 +98,10 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
 
         public List<string> LeerArchivo(string _cRuta)
         {
-            LectorArchivo srvLectorArchivo = new LectorArchivo();
+            ILectorArchivo ILectorArchivo = new LeerArchivo();
             string cExtension = string.Empty;
             List<string> lstContenidoArchivo = new List<string>();
-            lstContenidoArchivo = srvLectorArchivo.LeerArchivo(_cRuta);
+            lstContenidoArchivo = ILectorArchivo.LeerContenidoArchivo(_cRuta);
             return lstContenidoArchivo;
         }
 

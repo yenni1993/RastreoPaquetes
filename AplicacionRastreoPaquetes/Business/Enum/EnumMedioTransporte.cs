@@ -1,8 +1,11 @@
 ﻿namespace AplicacionRastreoPaquetes.Business.Enum
 {
-   public enum EnumMedioTransporte
+    /// <summary>
+    /// Enumerador con los nombres de los medios de transportes.
+    /// </summary>
+    public enum EnumMedioTransporte
     {
-        Avion ,
+        Avion,
         Barco,
         Tren
     }

@@ -6,15 +6,27 @@ using AplicacionRastreoPaquetes.Business.Interface;
 
 namespace AplicacionRastreoPaquetes.Business.Servicio
 {
+    /// <summary>
+    /// Clase que permite buscar empresas de paqueterías y que implementa de la interface IBuscadorEmpresaPaqueteria.
+    /// </summary>
     public class BuscadorEmpresaPaqueteria : IBuscadorEmpresaPaqueteria
     {
         private PaqueteriaDTO dtoPaqueteria;
 
+        /// <summary>
+        /// Constructor de la clase.
+        /// </summary>
+        /// <param name="_dtoPaqueteria">DTO con los datos de la paquetería.</param>
         public BuscadorEmpresaPaqueteria(PaqueteriaDTO _dtoPaqueteria)
         {
             this.dtoPaqueteria = _dtoPaqueteria;
         }
 
+        /// <summary>
+        /// Método que permite buscar la paquetería más económica.
+        /// </summary>
+        /// <param name="lstPaqueteriaDTO">Lista de paqueterías a comparar sus precios económicos.</param>
+        /// <returns>DTO con los datos de la paquetería con el precio más económico.</returns>
         public PaqueteriaDTO BuscarEmpresaPaqueteriaEconomica(List<PaqueteriaDTO> _lstPaqueteriaDTO)
         {
             PaqueteriaDTO dtoPaqueteriaSiguiente = new PaqueteriaDTO();
@@ -60,6 +72,10 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
             return dtoPaqueteriaMenorCosto;
         }
 
+        /// <summary>
+        /// Método que permite buscar una lista de empresas de paqueterías.
+        /// </summary>
+        /// <returns>Lista con los nombres de las empresas de paqueterías.</returns>
         public List<string> BuscarListaEmpresaPaqueteria()
         {
             List<string> lstNombreEmpresaPaqueteria = new List<string>();

@@ -43,19 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\DTO\Archivo.cs" />
     <Compile Include="Business\DTO\PaqueteriaDTO.cs" />
     <Compile Include="Business\Enum\EnumEmpresaPaqueteria.cs" />
     <Compile Include="Business\Enum\EnumMedioTransporte.cs" />
+    <Compile Include="Business\Interface\IAsignadorDatosPaquete.cs" />
     <Compile Include="Business\Interface\IBuscadorEmpresaPaqueteria.cs" />
     <Compile Include="Business\Interface\IBuscadorMedioTransporte.cs" />
     <Compile Include="Business\Interface\IColorMensaje.cs" />
-    <Compile Include="Business\Interface\IComparadorCostoEmpresaPaqueteria.cs" />
     <Compile Include="Business\Interface\IConstructorPaquete.cs" />
     <Compile Include="Business\Interface\IManejadorRangoTiempo.cs" />
     <Compile Include="Business\Interface\IObtenerMensaje.cs" />
     <Compile Include="Business\Interface\IValidadorMedioTransporte.cs" />
     <Compile Include="Business\Interface\IValidadorEmpresaPaqueteria.cs" />
+    <Compile Include="Business\Interface\ILectorArchivo.cs" />
     <Compile Include="Business\Servicio\AsignarDatosPaquete.cs" />
     <Compile Include="Business\Servicio\BuscadorEmpresaPaqueteria.cs" />
     <Compile Include="Business\Servicio\BuscadorMedioTransporte.cs" />
@@ -63,13 +63,12 @@
     <Compile Include="Business\Servicio\ColorMensajeAmarillo.cs" />
     <Compile Include="Business\Servicio\ColorMensajeRojo.cs" />
     <Compile Include="Business\Servicio\ColorMensajeVerde.cs" />
-    <Compile Include="Business\Servicio\CompararCostoEnvioEmpresaPaqueteria.cs" />
     <Compile Include="Business\Servicio\ConstructorPaqueteDhlAvion.cs" />
     <Compile Include="Business\Servicio\ConstructorPaqueteDhlBarco.cs" />
     <Compile Include="Business\Servicio\DirectorEmpresa.cs" />
     <Compile Include="Business\Servicio\ConstructorPaqueteEstafetaTren.cs" />
     <Compile Include="Business\Servicio\ConstructorPaqueteFedexBarco.cs" />
-    <Compile Include="Business\Servicio\LectorArchivo.cs" />
+    <Compile Include="Business\Servicio\LeerArchivo.cs" />
     <Compile Include="Business\Servicio\Cliente.cs" />
     <Compile Include="Business\Servicio\ManejadorRangoTiempo.cs" />
     <Compile Include="Business\Servicio\ManejadorRangoTiempoDias.cs" />

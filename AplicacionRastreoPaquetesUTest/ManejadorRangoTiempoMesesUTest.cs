@@ -6,20 +6,20 @@ using System;
 namespace AplicacionRastreoPaquetesUTest
 {
     [TestClass]
-    public class ManejadorRangoTiempoDiasUTest
+    public class ManejadorRangoTiempoMesesUTest
     {
         [TestMethod]
         [TestCategory("Pruebas Unitarias")]
-        public void AsignarSiguienteRangoTiempo_RangoTiempoDeDiasAHoras_DevuelveValidacionCorrecta()
+        public void AsignarSiguienteRangoTiempo_RangoTiempoDeMesesADias_DevuelveValidacionCorrecta()
         {
             //Arrange
             //Variables necesarias para realizar las pruebas.
+            IManejadorRangoTiempo IManejadorRangoTiempoMeses = new ManejadorRangoTiempoMeses();
             IManejadorRangoTiempo IManejadorRangoTiempoDias = new ManejadorRangoTiempoDias();
-            IManejadorRangoTiempo IManejadorRangoTiempoHoras = new ManejadorRangoTiempoHoras();
 
             //Act
             //Método que será sometido a pruebas.
-            IManejadorRangoTiempoDias.AsignarSiguienteRangoTiempo(IManejadorRangoTiempoHoras);
+            IManejadorRangoTiempoMeses.AsignarSiguienteRangoTiempo(IManejadorRangoTiempoDias);
 
             //Assert
             //Validación de valores esperados.
@@ -28,70 +28,70 @@ namespace AplicacionRastreoPaquetesUTest
 
         [TestMethod]
         [TestCategory("Pruebas Unitarias")]
-        public void ObtenerRangoTiempo_DiaEntregaMenorDiaActual_DevuelveTotalDiasTranscurridos()
+        public void ObtenerRangoTiempo_MesEntregaMenorMesActual_DevuelveTotalMesesTranscurridos()
         {
             //Arrange
             //Variables necesarias para realizar las pruebas.
             string cTiempoTranscurrido = string.Empty;
             TimeSpan tsDiferencia = new TimeSpan();
             DateTime dtFechaActual = new DateTime(2020, 01, 18, 12, 00, 00);
-            DateTime dtFechaEntrega = new DateTime(2020, 01, 16, 12, 00, 00);
-            IManejadorRangoTiempo IManejadorRangoTiempoDias = new ManejadorRangoTiempoDias();
+            DateTime dtFechaEntrega = new DateTime(2019, 11, 18, 12, 00, 00);
+            IManejadorRangoTiempo IManejadorRangoTiempoMeses = new ManejadorRangoTiempoMeses();
 
             //Act
             //Método que será sometido a pruebas.
             tsDiferencia = (dtFechaActual - dtFechaEntrega);
-            cTiempoTranscurrido = IManejadorRangoTiempoDias.ObtenerRangoTiempo(tsDiferencia);
+            cTiempoTranscurrido = IManejadorRangoTiempoMeses.ObtenerRangoTiempo(tsDiferencia);
 
             //Assert
             //Validación de valores esperados.
-            Assert.AreEqual("2 días", cTiempoTranscurrido);
+            Assert.AreEqual("2 meses", cTiempoTranscurrido);
         }
 
         [TestMethod]
         [TestCategory("Pruebas Unitarias")]
-        public void ObtenerRangoTiempo_DiaEntregaMayorDiaActual_DevuelveTotalDiasTranscurridos()
+        public void ObtenerRangoTiempo_MesEntregaMayorMesActual_DevuelveTotalMesesTranscurridos()
         {
             //Arrange
             //Variables necesarias para realizar las pruebas.
             string cTiempoTranscurrido = string.Empty;
             TimeSpan tsDiferencia = new TimeSpan();
             DateTime dtFechaActual = new DateTime(2020, 01, 18, 12, 00, 00);
-            DateTime dtFechaEntrega = new DateTime(2020, 01, 22, 12, 00, 00);
-            IManejadorRangoTiempo IManejadorRangoTiempoDias = new ManejadorRangoTiempoDias();
+            DateTime dtFechaEntrega = new DateTime(2020, 05, 18, 12, 00, 00);
+            IManejadorRangoTiempo IManejadorRangoTiempoMeses = new ManejadorRangoTiempoMeses();
 
             //Act
             //Método que será sometido a pruebas.
             tsDiferencia = (dtFechaActual - dtFechaEntrega);
-            cTiempoTranscurrido = IManejadorRangoTiempoDias.ObtenerRangoTiempo(tsDiferencia);
+            cTiempoTranscurrido = IManejadorRangoTiempoMeses.ObtenerRangoTiempo(tsDiferencia);
 
             //Assert
             //Validación de valores esperados.
-            Assert.AreEqual("4 días", cTiempoTranscurrido);
+            Assert.AreEqual("4 meses", cTiempoTranscurrido);
         }
 
         [TestMethod]
         [TestCategory("Pruebas Unitarias")]
-        public void ObtenerRangoTiempo_DiaEntregaIgualDiaActual_DevuelveTotalHorasTranscurridos()
+        public void ObtenerRangoTiempo_MesEntregaIgualMesActual_DevuelveTotalDiasTranscurridos()
         {
             //Arrange
             //Variables necesarias para realizar las pruebas.
             string cTiempoTranscurrido = string.Empty;
             TimeSpan tsDiferencia = new TimeSpan();
             DateTime dtFechaActual = new DateTime(2020, 01, 18, 12, 00, 00);
-            DateTime dtFechaEntrega = new DateTime(2020, 01, 18, 04, 00, 00);
+            DateTime dtFechaEntrega = new DateTime(2020, 01, 02, 12, 00, 00);
+            IManejadorRangoTiempo IManejadorRangoTiempoMeses = new ManejadorRangoTiempoMeses();
             IManejadorRangoTiempo IManejadorRangoTiempoDias = new ManejadorRangoTiempoDias();
-            IManejadorRangoTiempo IManejadorRangoTiempoHoras = new ManejadorRangoTiempoHoras();
 
             //Act
             //Método que será sometido a pruebas.
             tsDiferencia = (dtFechaActual - dtFechaEntrega);
-            IManejadorRangoTiempoDias.AsignarSiguienteRangoTiempo(IManejadorRangoTiempoHoras);
-            cTiempoTranscurrido = IManejadorRangoTiempoDias.ObtenerRangoTiempo(tsDiferencia);
+            IManejadorRangoTiempoMeses.AsignarSiguienteRangoTiempo(IManejadorRangoTiempoDias);
+            cTiempoTranscurrido = IManejadorRangoTiempoMeses.ObtenerRangoTiempo(tsDiferencia);
 
             //Assert
             //Validación de valores esperados.
-            Assert.AreEqual("8 horas", cTiempoTranscurrido);
+            Assert.AreEqual("16 días", cTiempoTranscurrido);
         }
     }
 }

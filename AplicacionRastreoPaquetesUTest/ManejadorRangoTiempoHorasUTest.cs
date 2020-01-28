@@ -10,7 +10,7 @@ namespace AplicacionRastreoPaquetesUTest
     {
         [TestMethod]
         [TestCategory("Pruebas Unitarias")]
-        public void AsignarSiguienteRangoTiempo_RangoTiempoDeHorasAMinutos_ValidacionCorrecta()
+        public void AsignarSiguienteRangoTiempo_RangoTiempoDeHorasAMinutos_DevuelveValidacionCorrecta()
         {
             //Arrange
             //Variables necesarias para realizar las pruebas.

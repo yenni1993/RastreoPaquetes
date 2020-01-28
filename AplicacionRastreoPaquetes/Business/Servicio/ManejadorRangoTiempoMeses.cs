@@ -15,7 +15,7 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
 
             if (iTotalDias > 30)
             {
-                iTotalMeses = iTotalDias / 31;
+                iTotalMeses = iTotalDias / 30;
                 cNombreFormatoHora = iTotalMeses == 1 ? "mes" : "meses";
                 cRangoTiempo = $"{iTotalMeses} {cNombreFormatoHora}";
             }

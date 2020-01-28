@@ -12,3 +12,10 @@ C:\Users\yenni.canul\Documents\BOT-YENNI\Requerimientos\SE-API\RQM 176814\Cursos
 C:\Users\yenni.canul\Documents\BOT-YENNI\Requerimientos\SE-API\RQM 176814\CursosUML\AplicacionRastreoPaquetes\AplicacionRastreoPaquetes\obj\Debug\AplicacionRastreoPaquetes.csproj.CoreCompileInputs.cache
 C:\Users\yenni.canul\Documents\BOT-YENNI\Requerimientos\SE-API\RQM 176814\CursosUML\AplicacionRastreoPaquetes\AplicacionRastreoPaquetes\obj\Debug\AplicacionRastreoPaquetes.exe
 C:\Users\yenni.canul\Documents\BOT-YENNI\Requerimientos\SE-API\RQM 176814\CursosUML\AplicacionRastreoPaquetes\AplicacionRastreoPaquetes\obj\Debug\AplicacionRastreoPaquetes.pdb
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetes\bin\Debug\AplicacionRastreoPaquetes.exe.config
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetes\bin\Debug\AplicacionRastreoPaquetes.exe
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetes\bin\Debug\AplicacionRastreoPaquetes.pdb
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetes\obj\Debug\AplicacionRastreoPaquetes.csprojAssemblyReference.cache
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetes\obj\Debug\AplicacionRastreoPaquetes.csproj.CoreCompileInputs.cache
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetes\obj\Debug\AplicacionRastreoPaquetes.exe
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetes\obj\Debug\AplicacionRastreoPaquetes.pdb

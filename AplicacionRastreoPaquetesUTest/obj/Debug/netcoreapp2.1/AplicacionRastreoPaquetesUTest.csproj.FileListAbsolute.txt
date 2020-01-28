@@ -16,3 +16,21 @@ C:\Users\yenni.canul\Documents\BOT-YENNI\Requerimientos\SE-API\RQM 176814\Cursos
 C:\Users\yenni.canul\Documents\BOT-YENNI\Requerimientos\SE-API\RQM 176814\CursosUML\AplicacionRastreoPaquetes\AplicacionRastreoPaquetesUTest\obj\Debug\netcoreapp2.1\AplicacionRastreoPaquetesUTest.csproj.CopyComplete
 C:\Users\yenni.canul\Documents\BOT-YENNI\Requerimientos\SE-API\RQM 176814\CursosUML\AplicacionRastreoPaquetes\AplicacionRastreoPaquetesUTest\obj\Debug\netcoreapp2.1\AplicacionRastreoPaquetesUTest.dll
 C:\Users\yenni.canul\Documents\BOT-YENNI\Requerimientos\SE-API\RQM 176814\CursosUML\AplicacionRastreoPaquetes\AplicacionRastreoPaquetesUTest\obj\Debug\netcoreapp2.1\AplicacionRastreoPaquetesUTest.pdb
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetesUTest\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetesUTest\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetesUTest\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetesUTest\bin\Debug\netcoreapp2.1\AplicacionRastreoPaquetesUTest.deps.json
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetesUTest\bin\Debug\netcoreapp2.1\AplicacionRastreoPaquetesUTest.runtimeconfig.json
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetesUTest\bin\Debug\netcoreapp2.1\AplicacionRastreoPaquetesUTest.runtimeconfig.dev.json
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetesUTest\bin\Debug\netcoreapp2.1\AplicacionRastreoPaquetesUTest.dll
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetesUTest\bin\Debug\netcoreapp2.1\AplicacionRastreoPaquetesUTest.pdb
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetesUTest\bin\Debug\netcoreapp2.1\AplicacionRastreoPaquetes.exe
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetesUTest\bin\Debug\netcoreapp2.1\AplicacionRastreoPaquetes.pdb
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetesUTest\bin\Debug\netcoreapp2.1\AplicacionRastreoPaquetes.exe.config
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetesUTest\obj\Debug\netcoreapp2.1\AplicacionRastreoPaquetesUTest.csprojAssemblyReference.cache
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetesUTest\obj\Debug\netcoreapp2.1\AplicacionRastreoPaquetesUTest.csproj.CoreCompileInputs.cache
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetesUTest\obj\Debug\netcoreapp2.1\AplicacionRastreoPaquetesUTest.AssemblyInfoInputs.cache
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetesUTest\obj\Debug\netcoreapp2.1\AplicacionRastreoPaquetesUTest.AssemblyInfo.cs
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetesUTest\obj\Debug\netcoreapp2.1\AplicacionRastreoPaquetesUTest.csproj.CopyComplete
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetesUTest\obj\Debug\netcoreapp2.1\AplicacionRastreoPaquetesUTest.dll
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetesUTest\obj\Debug\netcoreapp2.1\AplicacionRastreoPaquetesUTest.pdb

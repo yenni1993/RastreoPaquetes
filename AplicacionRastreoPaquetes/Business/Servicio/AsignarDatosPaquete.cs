@@ -1,10 +1,19 @@
 ﻿using AplicacionRastreoPaquetes.Business.DTO;
 using AplicacionRastreoPaquetes.Business.Enum;
+using AplicacionRastreoPaquetes.Business.Interface;
 
 namespace AplicacionRastreoPaquetes.Business.Servicio
 {
-    public class AsignarDatosPaquete
+    /// <summary>
+    /// Clase que permite asignar datos de los paquetes y que implementa de la interface IAsignadorDatosPaquete.
+    /// </summary>
+    public class AsignarDatosPaquete : IAsignadorDatosPaquete
     {
+        /// <summary>
+        /// Método que permite asignar nuevos datos a un paquete.
+        /// </summary>
+        /// <param name="_dtoPaquete">DTO con los datos de un paquete.</param>
+        /// <returns>DTO con los datos nuevos asignados de un paquete.</returns>
         public PaqueteriaDTO AsignarNuevosDatos(PaqueteriaDTO _dtoPaquete)
         {
             DirectorEmpresa srvDirector;

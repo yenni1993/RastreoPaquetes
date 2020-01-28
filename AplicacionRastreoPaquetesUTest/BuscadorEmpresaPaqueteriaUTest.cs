@@ -1,7 +1,7 @@
+using AplicacionRastreoPaquetes.Business.Interface;
 using AplicacionRastreoPaquetes.Business.Servicio;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 
 namespace AplicacionRastreoPaquetesUTest
@@ -11,23 +11,23 @@ namespace AplicacionRastreoPaquetesUTest
     {
         [TestMethod]
         [TestCategory("Pruebas Unitarias")]
-        [DataRow("DHL")]
-        [DataRow("Estafeta")]
-        [DataRow("Fedex")]
-        public void BuscadorEmpresaPaqueteriaUTest_EnviarNombreEmpresa_ListaNombreEmpresa(string _cNombreEmpresa)
+        public void BuscarListaEmpresaPaqueteria_EmpresaExistente_DevuelveListaNombreEmpresa()
         {
             //Arrange
             //Variables necesarias para realizar las pruebas.
-            BuscadorEmpresaPaqueteria srvBuscadorEmpresaPaqueteria = new BuscadorEmpresaPaqueteria(null);
+            IBuscadorEmpresaPaqueteria IBuscadorEmpresaPaqueteria = new BuscadorEmpresaPaqueteria(null);
             List<string> lstNombreEmpresa = new List<string>();
 
             //Act
             //Método que será sometido a pruebas.
-            lstNombreEmpresa = srvBuscadorEmpresaPaqueteria.BuscarListaEmpresaPaqueteria();
+            lstNombreEmpresa = IBuscadorEmpresaPaqueteria.BuscarListaEmpresaPaqueteria();
 
             //Assert
             //Validación de valores esperados.
-            Assert.IsTrue(lstNombreEmpresa.Any() && lstNombreEmpresa.Contains(_cNombreEmpresa));
+            Assert.IsTrue(lstNombreEmpresa.Any() 
+                && lstNombreEmpresa.Contains("DHL")
+                && lstNombreEmpresa.Contains("Estafeta")
+                && lstNombreEmpresa.Contains("Fedex"));
         }
     }
 }

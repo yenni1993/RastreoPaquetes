@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace AplicacionRastreoPaquetes
 {
     /// <summary>
-    /// Clase Program.
+    /// Clase Program del sistema.
     /// </summary>
     public class Program
     {

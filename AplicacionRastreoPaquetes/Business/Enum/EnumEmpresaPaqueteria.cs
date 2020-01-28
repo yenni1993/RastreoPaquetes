@@ -1,9 +1,12 @@
 ﻿namespace AplicacionRastreoPaquetes.Business.Enum
 {
+    /// <summary>
+    /// Enumerador con los nombres de las empresas de paqueterías.
+    /// </summary>
     public enum EnumEmpresaPaqueteria
     {
-        DHL = 1,
-        Estafeta = 2,
-        Fedex = 3
+        DHL,
+        Estafeta,
+        Fedex
     }
 }
