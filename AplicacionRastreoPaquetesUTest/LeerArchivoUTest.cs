@@ -14,17 +14,17 @@ namespace AplicacionRastreoPaquetesUTest
         {
             //Arrange
             //Variables necesarias para realizar las pruebas.
-            ILectorArchivo ILectorArchivo = new AplicacionRastreoPaquetes.Business.Servicio.LeerArchivo();
-            List<string> SUT = new List<string>();
+            ILectorArchivo SUT = new AplicacionRastreoPaquetes.Business.Servicio.LeerArchivo();
+            List<string> lstContenidoArchivo = new List<string>();
             string cRuta = @"C:\RastreoPaquetito123.csv";
 
             //Act
             //Método que será sometido a pruebas.
-            SUT = ILectorArchivo.LeerContenidoArchivo(cRuta);
+            lstContenidoArchivo = SUT.LeerContenidoArchivo(cRuta);
 
             //Assert
             //Validación de valores esperados.
-            Assert.IsFalse(SUT.Any());
+            Assert.IsFalse(lstContenidoArchivo.Any());
         }
 
         [TestMethod]
@@ -33,17 +33,17 @@ namespace AplicacionRastreoPaquetesUTest
         {
             //Arrange
             //Variables necesarias para realizar las pruebas.
-            ILectorArchivo ILectorArchivo = new AplicacionRastreoPaquetes.Business.Servicio.LeerArchivo();
-            List<string> SUT = new List<string>();
+            ILectorArchivo SUT = new AplicacionRastreoPaquetes.Business.Servicio.LeerArchivo();
+            List<string> lstContenidoArchivo = new List<string>();
             string cRuta = @"C:\RastreoPaquete.csv";
 
             //Act
             //Método que será sometido a pruebas.
-            SUT = ILectorArchivo.LeerContenidoArchivo(cRuta);
+            lstContenidoArchivo = SUT.LeerContenidoArchivo(cRuta);
 
             //Assert
             //Validación de valores esperados.
-            Assert.IsTrue(SUT.Any());
+            Assert.IsTrue(lstContenidoArchivo.Any());
         }
     }
 }

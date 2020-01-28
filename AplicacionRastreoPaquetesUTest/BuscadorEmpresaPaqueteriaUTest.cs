@@ -15,19 +15,19 @@ namespace AplicacionRastreoPaquetesUTest
         {
             //Arrange
             //Variables necesarias para realizar las pruebas.
-            IBuscadorEmpresaPaqueteria IBuscadorEmpresaPaqueteria = new BuscadorEmpresaPaqueteria(null);
-            List<string> SUT = new List<string>();
+            IBuscadorEmpresaPaqueteria SUT = new BuscadorEmpresaPaqueteria(null);
+            List<string> lstNombreEmpresa = new List<string>();
 
             //Act
             //Método que será sometido a pruebas.
-            SUT = IBuscadorEmpresaPaqueteria.BuscarListaEmpresaPaqueteria();
+            lstNombreEmpresa = SUT.BuscarListaEmpresaPaqueteria();
 
             //Assert
             //Validación de valores esperados.
-            Assert.IsTrue(SUT.Any() 
-                && SUT.Contains("DHL")
-                && SUT.Contains("Estafeta")
-                && SUT.Contains("Fedex"));
+            Assert.IsTrue(lstNombreEmpresa.Any() 
+                && lstNombreEmpresa.Contains("DHL")
+                && lstNombreEmpresa.Contains("Estafeta")
+                && lstNombreEmpresa.Contains("Fedex"));
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AplicacionRastreoPaquetes.Business.Servicio;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace AplicacionRastreoPaquetes
 {
@@ -14,7 +15,7 @@ namespace AplicacionRastreoPaquetes
             Cliente oCliente = new Cliente();
             string cRuta = string.Empty;
             List<string> lstContenidoArchivo = new List<string>();
-            cRuta = @"C:\RastreoPaquete.csv";
+            cRuta = Path.GetFullPath("RastreoPaquete.csv");
             lstContenidoArchivo = oCliente.LeerArchivo(cRuta);
             oCliente.AplicarRastreoPaquete(lstContenidoArchivo);
             Console.ReadLine();

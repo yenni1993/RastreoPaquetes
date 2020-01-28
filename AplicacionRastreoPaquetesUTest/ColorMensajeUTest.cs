@@ -14,13 +14,13 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IColorMensaje IColorMensaje = new ColorMensajeAmarillo();
-            ColorMensaje srvColorMensaje = new ColorMensaje();
+            ColorMensaje SUT = new ColorMensaje();
             string cMensaje = "Color Amarillo";
 
             //Act
             //Método que será sometido a pruebas.
-            srvColorMensaje.AgregarColorMensaje(IColorMensaje);
-            srvColorMensaje.ColorearMensaje(cMensaje);
+            SUT.AgregarColorMensaje(IColorMensaje);
+            SUT.ColorearMensaje(cMensaje);
 
             //Assert
             //Validación de valores esperados.
@@ -34,13 +34,13 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IColorMensaje IColorMensaje = new ColorMensajeRojo();
-            ColorMensaje srvColorMensaje = new ColorMensaje();
+            ColorMensaje SUT = new ColorMensaje();
             string cMensaje = "Color Rojo";
 
             //Act
             //Método que será sometido a pruebas.
-            srvColorMensaje.AgregarColorMensaje(IColorMensaje);
-            srvColorMensaje.ColorearMensaje(cMensaje);
+            SUT.AgregarColorMensaje(IColorMensaje);
+            SUT.ColorearMensaje(cMensaje);
 
             //Assert
             //Validación de valores esperados.
@@ -54,13 +54,13 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IColorMensaje IColorMensaje = new ColorMensajeVerde();
-            ColorMensaje srvColorMensaje = new ColorMensaje();
+            ColorMensaje SUT = new ColorMensaje();
             string cMensaje = "Color Verde";
 
             //Act
             //Método que será sometido a pruebas.
-            srvColorMensaje.AgregarColorMensaje(IColorMensaje);
-            srvColorMensaje.ColorearMensaje(cMensaje);
+            SUT.AgregarColorMensaje(IColorMensaje);
+            SUT.ColorearMensaje(cMensaje);
 
             //Assert
             //Validación de valores esperados.

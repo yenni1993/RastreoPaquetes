@@ -17,13 +17,13 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IConstructorPaquete IConstructorPaqueteDhlAvion = new ConstructorPaqueteDhlAvion();
-            DirectorEmpresa srvDirectorEmpresa = new DirectorEmpresa(IConstructorPaqueteDhlAvion);
+            DirectorEmpresa SUT = new DirectorEmpresa(IConstructorPaqueteDhlAvion);
             PaqueteriaDTO dtoPaqueteria = new PaqueteriaDTO();
             dtoPaqueteria = CrearPaqueteriaDTO();
 
             //Act
             //Método que será sometido a pruebas.
-            srvDirectorEmpresa.EnviarPaquetePorDhlEnAvion(dtoPaqueteria);
+            SUT.EnviarPaquetePorDhlEnAvion(dtoPaqueteria);
 
             //Assert
             //Validación de valores esperados.
@@ -37,13 +37,13 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IConstructorPaquete IConstructorPaqueteDhlAvion = new ConstructorPaqueteDhlAvion();
-            DirectorEmpresa srvDirectorEmpresa = new DirectorEmpresa(IConstructorPaqueteDhlAvion);
+            DirectorEmpresa SUT = new DirectorEmpresa(IConstructorPaqueteDhlAvion);
             PaqueteriaDTO dtoPaqueteria = new PaqueteriaDTO();
             dtoPaqueteria = CrearPaqueteriaDTO();
 
             //Act
             //Método que será sometido a pruebas.
-            srvDirectorEmpresa.EnviarPaquetePorDhlEnAvion(dtoPaqueteria);
+            SUT.EnviarPaquetePorDhlEnAvion(dtoPaqueteria);
 
             //Assert
             //Validación de valores esperados.
@@ -57,13 +57,13 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IConstructorPaquete IConstructorPaqueteDhlAvion = new ConstructorPaqueteDhlAvion();
-            DirectorEmpresa srvDirectorEmpresa = new DirectorEmpresa(IConstructorPaqueteDhlAvion);
+            DirectorEmpresa SUT = new DirectorEmpresa(IConstructorPaqueteDhlAvion);
             PaqueteriaDTO dtoPaqueteria = new PaqueteriaDTO();
             dtoPaqueteria = CrearPaqueteriaDTO();
 
             //Act
             //Método que será sometido a pruebas.
-            srvDirectorEmpresa.EnviarPaquetePorDhlEnAvion(dtoPaqueteria);
+            SUT.EnviarPaquetePorDhlEnAvion(dtoPaqueteria);
 
             //Assert
             //Validación de valores esperados.
@@ -79,13 +79,13 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IConstructorPaquete IConstructorPaqueteDhlBarco = new ConstructorPaqueteDhlBarco();
-            DirectorEmpresa srvDirectorEmpresa = new DirectorEmpresa(IConstructorPaqueteDhlBarco);
+            DirectorEmpresa SUT = new DirectorEmpresa(IConstructorPaqueteDhlBarco);
             PaqueteriaDTO dtoPaqueteria = new PaqueteriaDTO();
             dtoPaqueteria = CrearPaqueteriaDTO();
 
             //Act
             //Método que será sometido a pruebas.
-            srvDirectorEmpresa.EnviarPaquetePorDhlEnBarco(dtoPaqueteria);
+            SUT.EnviarPaquetePorDhlEnBarco(dtoPaqueteria);
 
             //Assert
             //Validación de valores esperados.
@@ -99,13 +99,13 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IConstructorPaquete IConstructorPaqueteDhlBarco = new ConstructorPaqueteDhlBarco();
-            DirectorEmpresa srvDirectorEmpresa = new DirectorEmpresa(IConstructorPaqueteDhlBarco);
+            DirectorEmpresa SUT = new DirectorEmpresa(IConstructorPaqueteDhlBarco);
             PaqueteriaDTO dtoPaqueteria = new PaqueteriaDTO();
             dtoPaqueteria = CrearPaqueteriaDTO();
 
             //Act
             //Método que será sometido a pruebas.
-            srvDirectorEmpresa.EnviarPaquetePorDhlEnBarco(dtoPaqueteria);
+            SUT.EnviarPaquetePorDhlEnBarco(dtoPaqueteria);
 
             //Assert
             //Validación de valores esperados.
@@ -119,13 +119,13 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IConstructorPaquete IConstructorPaqueteDhlBarco = new ConstructorPaqueteDhlBarco();
-            DirectorEmpresa srvDirectorEmpresa = new DirectorEmpresa(IConstructorPaqueteDhlBarco);
+            DirectorEmpresa SUT = new DirectorEmpresa(IConstructorPaqueteDhlBarco);
             PaqueteriaDTO dtoPaqueteria = new PaqueteriaDTO();
             dtoPaqueteria = CrearPaqueteriaDTO();
 
             //Act
             //Método que será sometido a pruebas.
-            srvDirectorEmpresa.EnviarPaquetePorDhlEnBarco(dtoPaqueteria);
+            SUT.EnviarPaquetePorDhlEnBarco(dtoPaqueteria);
 
             //Assert
             //Validación de valores esperados.
@@ -141,13 +141,13 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IConstructorPaquete IConstructorPaqueteEstafetaTren = new ConstructorPaqueteEstafetaTren();
-            DirectorEmpresa srvDirectorEmpresa = new DirectorEmpresa(IConstructorPaqueteEstafetaTren);
+            DirectorEmpresa SUT = new DirectorEmpresa(IConstructorPaqueteEstafetaTren);
             PaqueteriaDTO dtoPaqueteria = new PaqueteriaDTO();
             dtoPaqueteria = CrearPaqueteriaDTO();
 
             //Act
             //Método que será sometido a pruebas.
-            srvDirectorEmpresa.EnviarPaquetePorEstafetaEnTren(dtoPaqueteria);
+            SUT.EnviarPaquetePorEstafetaEnTren(dtoPaqueteria);
 
             //Assert
             //Validación de valores esperados.
@@ -161,13 +161,13 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IConstructorPaquete IConstructorPaqueteEstafetaTren = new ConstructorPaqueteEstafetaTren();
-            DirectorEmpresa srvDirectorEmpresa = new DirectorEmpresa(IConstructorPaqueteEstafetaTren);
+            DirectorEmpresa SUT = new DirectorEmpresa(IConstructorPaqueteEstafetaTren);
             PaqueteriaDTO dtoPaqueteria = new PaqueteriaDTO();
             dtoPaqueteria = CrearPaqueteriaDTO();
 
             //Act
             //Método que será sometido a pruebas.
-            srvDirectorEmpresa.EnviarPaquetePorEstafetaEnTren(dtoPaqueteria);
+            SUT.EnviarPaquetePorEstafetaEnTren(dtoPaqueteria);
 
             //Assert
             //Validación de valores esperados.
@@ -181,13 +181,13 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IConstructorPaquete IConstructorPaqueteEstafetaTren = new ConstructorPaqueteEstafetaTren();
-            DirectorEmpresa srvDirectorEmpresa = new DirectorEmpresa(IConstructorPaqueteEstafetaTren);
+            DirectorEmpresa SUT = new DirectorEmpresa(IConstructorPaqueteEstafetaTren);
             PaqueteriaDTO dtoPaqueteria = new PaqueteriaDTO();
             dtoPaqueteria = CrearPaqueteriaDTO();
 
             //Act
             //Método que será sometido a pruebas.
-            srvDirectorEmpresa.EnviarPaquetePorEstafetaEnTren(dtoPaqueteria);
+            SUT.EnviarPaquetePorEstafetaEnTren(dtoPaqueteria);
 
             //Assert
             //Validación de valores esperados.
@@ -203,13 +203,13 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IConstructorPaquete IConstructorPaqueteFedexBarco = new ConstructorPaqueteFedexBarco();
-            DirectorEmpresa srvDirectorEmpresa = new DirectorEmpresa(IConstructorPaqueteFedexBarco);
+            DirectorEmpresa SUT = new DirectorEmpresa(IConstructorPaqueteFedexBarco);
             PaqueteriaDTO dtoPaqueteria = new PaqueteriaDTO();
             dtoPaqueteria = CrearPaqueteriaDTO();
 
             //Act
             //Método que será sometido a pruebas.
-            srvDirectorEmpresa.EnviarPaquetePorFedexEnBarco(dtoPaqueteria);
+            SUT.EnviarPaquetePorFedexEnBarco(dtoPaqueteria);
 
             //Assert
             //Validación de valores esperados.
@@ -223,13 +223,13 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IConstructorPaquete IConstructorPaqueteFedexBarco = new ConstructorPaqueteFedexBarco();
-            DirectorEmpresa srvDirectorEmpresa = new DirectorEmpresa(IConstructorPaqueteFedexBarco);
+            DirectorEmpresa SUT = new DirectorEmpresa(IConstructorPaqueteFedexBarco);
             PaqueteriaDTO dtoPaqueteria = new PaqueteriaDTO();
             dtoPaqueteria = CrearPaqueteriaDTO();
 
             //Act
             //Método que será sometido a pruebas.
-            srvDirectorEmpresa.EnviarPaquetePorFedexEnBarco(dtoPaqueteria);
+            SUT.EnviarPaquetePorFedexEnBarco(dtoPaqueteria);
 
             //Assert
             //Validación de valores esperados.
@@ -243,13 +243,13 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IConstructorPaquete IConstructorPaqueteFedexBarco = new ConstructorPaqueteFedexBarco();
-            DirectorEmpresa srvDirectorEmpresa = new DirectorEmpresa(IConstructorPaqueteFedexBarco);
+            DirectorEmpresa SUT = new DirectorEmpresa(IConstructorPaqueteFedexBarco);
             PaqueteriaDTO dtoPaqueteria = new PaqueteriaDTO();
             dtoPaqueteria = CrearPaqueteriaDTO();
 
             //Act
             //Método que será sometido a pruebas.
-            srvDirectorEmpresa.EnviarPaquetePorFedexEnBarco(dtoPaqueteria);
+            SUT.EnviarPaquetePorFedexEnBarco(dtoPaqueteria);
 
             //Assert
             //Validación de valores esperados.
