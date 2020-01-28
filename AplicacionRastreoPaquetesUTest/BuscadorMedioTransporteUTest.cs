@@ -18,16 +18,16 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IBuscadorMedioTransporte IBuscadorMedioTransporte = new BuscadorMedioTransporte();
-            List<PaqueteriaDTO> lstPaqueteriaDTO = new List<PaqueteriaDTO>();
+            List<PaqueteriaDTO> SUT = new List<PaqueteriaDTO>();
 
             //Act
             //Método que será sometido a pruebas.
-            lstPaqueteriaDTO = IBuscadorMedioTransporte.BuscarListaMedioTransporteConEmpresa();
+            SUT = IBuscadorMedioTransporte.BuscarListaMedioTransporteConEmpresa();
 
             //Assert
             //Validación de valores esperados.
-            Assert.IsTrue(lstPaqueteriaDTO.Any()
-                && lstPaqueteriaDTO.Where(w => w.cNombreEmpresa == "DHL" 
+            Assert.IsTrue(SUT.Any()
+                && SUT.Where(w => w.cNombreEmpresa == "DHL" 
                 && w.lstNombreMedioTransporte.Contains("Avion") 
                 && w.lstNombreMedioTransporte.Contains("Barco")).Any());
         }
@@ -39,16 +39,16 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IBuscadorMedioTransporte IBuscadorMedioTransporte = new BuscadorMedioTransporte();
-            List<PaqueteriaDTO> lstPaqueteriaDTO = new List<PaqueteriaDTO>();
+            List<PaqueteriaDTO> SUT = new List<PaqueteriaDTO>();
 
             //Act
             //Método que será sometido a pruebas.
-            lstPaqueteriaDTO = IBuscadorMedioTransporte.BuscarListaMedioTransporteConEmpresa();
+            SUT = IBuscadorMedioTransporte.BuscarListaMedioTransporteConEmpresa();
 
             //Assert
             //Validación de valores esperados.
-            Assert.IsTrue(lstPaqueteriaDTO.Any()
-                && lstPaqueteriaDTO.Where(w => w.cNombreEmpresa == "Estafeta"
+            Assert.IsTrue(SUT.Any()
+                && SUT.Where(w => w.cNombreEmpresa == "Estafeta"
                 && w.lstNombreMedioTransporte.Contains("Tren")).Any());
         }
 
@@ -59,16 +59,16 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IBuscadorMedioTransporte IBuscadorMedioTransporte = new BuscadorMedioTransporte();
-            List<PaqueteriaDTO> lstPaqueteriaDTO = new List<PaqueteriaDTO>();
+            List<PaqueteriaDTO> SUT = new List<PaqueteriaDTO>();
 
             //Act
             //Método que será sometido a pruebas.
-            lstPaqueteriaDTO = IBuscadorMedioTransporte.BuscarListaMedioTransporteConEmpresa();
+            SUT = IBuscadorMedioTransporte.BuscarListaMedioTransporteConEmpresa();
 
             //Assert
             //Validación de valores esperados.
-            Assert.IsTrue(lstPaqueteriaDTO.Any()
-                && lstPaqueteriaDTO.Where(w => w.cNombreEmpresa == "Fedex"
+            Assert.IsTrue(SUT.Any()
+                && SUT.Where(w => w.cNombreEmpresa == "Fedex"
                 && w.lstNombreMedioTransporte.Contains("Barco")).Any());
         }
 
@@ -82,15 +82,15 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IBuscadorMedioTransporte IBuscadorMedioTransporte = new BuscadorMedioTransporte();
-            List<string> lstNombreMedioTransporte = new List<string>();
+            List<string> SUT = new List<string>();
 
             //Act
             //Método que será sometido a pruebas.
-            lstNombreMedioTransporte = IBuscadorMedioTransporte.BuscarListaMedioTransportePorEmpresa("Estafetita");
+            SUT = IBuscadorMedioTransporte.BuscarListaMedioTransportePorEmpresa("Estafetita");
 
             //Assert
             //Validación de valores esperados.
-            Assert.IsFalse(lstNombreMedioTransporte.Any());
+            Assert.IsFalse(SUT.Any());
         }
 
         [TestMethod]
@@ -100,17 +100,17 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IBuscadorMedioTransporte IBuscadorMedioTransporte = new BuscadorMedioTransporte();
-            List<string> lstNombreMedioTransporte = new List<string>();
+            List<string> SUT = new List<string>();
 
             //Act
             //Método que será sometido a pruebas.
-            lstNombreMedioTransporte = IBuscadorMedioTransporte.BuscarListaMedioTransportePorEmpresa("DHL");
+            SUT = IBuscadorMedioTransporte.BuscarListaMedioTransportePorEmpresa("DHL");
 
             //Assert
             //Validación de valores esperados.
-            Assert.IsTrue(lstNombreMedioTransporte.Any() 
-                && lstNombreMedioTransporte.Contains("Avion") 
-                && lstNombreMedioTransporte.Contains("Barco"));
+            Assert.IsTrue(SUT.Any() 
+                && SUT.Contains("Avion") 
+                && SUT.Contains("Barco"));
         }
 
         [TestMethod]
@@ -120,16 +120,16 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IBuscadorMedioTransporte IBuscadorMedioTransporte = new BuscadorMedioTransporte();
-            List<string> lstNombreMedioTransporte = new List<string>();
+            List<string> SUT = new List<string>();
 
             //Act
             //Método que será sometido a pruebas.
-            lstNombreMedioTransporte = IBuscadorMedioTransporte.BuscarListaMedioTransportePorEmpresa("Estafeta");
+            SUT = IBuscadorMedioTransporte.BuscarListaMedioTransportePorEmpresa("Estafeta");
 
             //Assert
             //Validación de valores esperados.
-            Assert.IsTrue(lstNombreMedioTransporte.Any()
-                && lstNombreMedioTransporte.Contains("Tren"));
+            Assert.IsTrue(SUT.Any()
+                && SUT.Contains("Tren"));
         }
 
         [TestMethod]
@@ -139,16 +139,16 @@ namespace AplicacionRastreoPaquetesUTest
             //Arrange
             //Variables necesarias para realizar las pruebas.
             IBuscadorMedioTransporte IBuscadorMedioTransporte = new BuscadorMedioTransporte();
-            List<string> lstNombreMedioTransporte = new List<string>();
+            List<string> SUT = new List<string>();
 
             //Act
             //Método que será sometido a pruebas.
-            lstNombreMedioTransporte = IBuscadorMedioTransporte.BuscarListaMedioTransportePorEmpresa("Fedex");
+            SUT = IBuscadorMedioTransporte.BuscarListaMedioTransportePorEmpresa("Fedex");
 
             //Assert
             //Validación de valores esperados.
-            Assert.IsTrue(lstNombreMedioTransporte.Any()
-                && lstNombreMedioTransporte.Contains("Barco"));
+            Assert.IsTrue(SUT.Any()
+                && SUT.Contains("Barco"));
         }
         #endregion
     }

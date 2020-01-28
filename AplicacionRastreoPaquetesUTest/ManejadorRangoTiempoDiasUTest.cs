@@ -32,7 +32,7 @@ namespace AplicacionRastreoPaquetesUTest
         {
             //Arrange
             //Variables necesarias para realizar las pruebas.
-            string cTiempoTranscurrido = string.Empty;
+            string SUT = string.Empty;
             TimeSpan tsDiferencia = new TimeSpan();
             DateTime dtFechaActual = new DateTime(2020, 01, 18, 12, 00, 00);
             DateTime dtFechaEntrega = new DateTime(2020, 01, 16, 12, 00, 00);
@@ -41,11 +41,11 @@ namespace AplicacionRastreoPaquetesUTest
             //Act
             //Método que será sometido a pruebas.
             tsDiferencia = (dtFechaActual - dtFechaEntrega);
-            cTiempoTranscurrido = IManejadorRangoTiempoDias.ObtenerRangoTiempo(tsDiferencia);
+            SUT = IManejadorRangoTiempoDias.ObtenerRangoTiempo(tsDiferencia);
 
             //Assert
             //Validación de valores esperados.
-            Assert.AreEqual("2 días", cTiempoTranscurrido);
+            Assert.AreEqual("2 días", SUT);
         }
 
         [TestMethod]
@@ -54,7 +54,7 @@ namespace AplicacionRastreoPaquetesUTest
         {
             //Arrange
             //Variables necesarias para realizar las pruebas.
-            string cTiempoTranscurrido = string.Empty;
+            string SUT = string.Empty;
             TimeSpan tsDiferencia = new TimeSpan();
             DateTime dtFechaActual = new DateTime(2020, 01, 18, 12, 00, 00);
             DateTime dtFechaEntrega = new DateTime(2020, 01, 22, 12, 00, 00);
@@ -63,11 +63,11 @@ namespace AplicacionRastreoPaquetesUTest
             //Act
             //Método que será sometido a pruebas.
             tsDiferencia = (dtFechaActual - dtFechaEntrega);
-            cTiempoTranscurrido = IManejadorRangoTiempoDias.ObtenerRangoTiempo(tsDiferencia);
+            SUT = IManejadorRangoTiempoDias.ObtenerRangoTiempo(tsDiferencia);
 
             //Assert
             //Validación de valores esperados.
-            Assert.AreEqual("4 días", cTiempoTranscurrido);
+            Assert.AreEqual("4 días", SUT);
         }
 
         [TestMethod]
@@ -76,7 +76,7 @@ namespace AplicacionRastreoPaquetesUTest
         {
             //Arrange
             //Variables necesarias para realizar las pruebas.
-            string cTiempoTranscurrido = string.Empty;
+            string SUT = string.Empty;
             TimeSpan tsDiferencia = new TimeSpan();
             DateTime dtFechaActual = new DateTime(2020, 01, 18, 12, 00, 00);
             DateTime dtFechaEntrega = new DateTime(2020, 01, 18, 04, 00, 00);
@@ -87,11 +87,11 @@ namespace AplicacionRastreoPaquetesUTest
             //Método que será sometido a pruebas.
             tsDiferencia = (dtFechaActual - dtFechaEntrega);
             IManejadorRangoTiempoDias.AsignarSiguienteRangoTiempo(IManejadorRangoTiempoHoras);
-            cTiempoTranscurrido = IManejadorRangoTiempoDias.ObtenerRangoTiempo(tsDiferencia);
+            SUT = IManejadorRangoTiempoDias.ObtenerRangoTiempo(tsDiferencia);
 
             //Assert
             //Validación de valores esperados.
-            Assert.AreEqual("8 horas", cTiempoTranscurrido);
+            Assert.AreEqual("8 horas", SUT);
         }
     }
 }
