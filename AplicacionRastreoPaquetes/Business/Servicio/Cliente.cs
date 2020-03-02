@@ -2,6 +2,7 @@
 using AplicacionRastreoPaquetes.Business.Interface;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AplicacionRastreoPaquetes.Business.Servicio
 {
@@ -16,57 +17,68 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
         /// <param name="_lstContenidoArchivo">Lista con el contenido del archivo a leer.</param>
         public void AplicarRastreoPaquete(List<string> _lstContenidoArchivo)
         {
-            //DTO.
+            //DTOs.
             PaqueteriaDTO dtoPaqueteria = new PaqueteriaDTO();
             PaqueteriaDTO dtoPaqueteriaActualizado = new PaqueteriaDTO();
             PaqueteriaDTO dtoPaqueteriaEconomica = new PaqueteriaDTO();
-            //Servicio.
-            ManejadorRangoTiempo srvManejadorRangoTiempoMeses = new ManejadorRangoTiempoMeses();
-            ManejadorRangoTiempo srvManejadorRangoTiempoDias = new ManejadorRangoTiempoDias();
-            ManejadorRangoTiempo srvManejadorRangoTiempoHoras = new ManejadorRangoTiempoHoras();
-            ManejadorRangoTiempo srvManejadorRangoTiempoMinutos = new ManejadorRangoTiempoMinutos();
-            //Interface.
-            IAsignadorDatosPaquete IAsignadorDatosPaquete;
+
+            //Servicios.
+            IManejadorRangoTiempo srvManejadorRangoTiempoMeses = new ManejadorRangoTiempoMeses();
+            IManejadorRangoTiempo srvManejadorRangoTiempoDias = new ManejadorRangoTiempoDias();
+            IManejadorRangoTiempo srvManejadorRangoTiempoHoras = new ManejadorRangoTiempoHoras();
+            IManejadorRangoTiempo srvManejadorRangoTiempoMinutos = new ManejadorRangoTiempoMinutos();
+            
+            //Interfaces.            
+            IMedioTransporte ITransporteTren = new TransporteTren() { cNombreMedioTransporte = "Tren", dCostoKmPeso = 5, dVelocidadEntrega = 80 };
+            IMedioTransporte ITransporteAvion = new TransporteAvion() { dCostoKmPeso = 10, cNombreMedioTransporte = "Avion", dVelocidadEntrega = 600 };
+            IMedioTransporte ITransporteBarco = new TransporteBarco() { dCostoKmPeso = 1, cNombreMedioTransporte = "Barco", dVelocidadEntrega = 46 };
+            IEmpresaPaqueteria IEmpresaDHL = new EmpresaDHL() { cNombreEmpresa = "DHL", dMargenUtilidad = 40, lstMediosTransportes = new List<IMedioTransporte>() { ITransporteAvion, ITransporteBarco } };
+            IEmpresaPaqueteria IEmpresaEstafeta = new EmpresaEstafeta() { cNombreEmpresa = "Estafeta", dMargenUtilidad = 20, lstMediosTransportes = new List<IMedioTransporte>() { ITransporteTren } };
+            IEmpresaPaqueteria IEmpresaFedex = new EmpresaFedex() { cNombreEmpresa = "Fedex", dMargenUtilidad = 50, lstMediosTransportes = new List<IMedioTransporte>() { ITransporteBarco } };
             IBuscadorEmpresaPaqueteria IBuscadorEmpresaPaqueteria;
-            IBuscadorMedioTransporte IBuscadorMedioTransporte;
             IObtenerMensaje IObtenerMensaje;
             IValidadorEmpresaPaqueteria IValidadorEmpresaPaqueteria;
             IValidadorMedioTransporte IValidadorMedioTransporte;
+            IFormatoTexto IFormatoTexto = new FormatoTexto();
+            IConvertidorFecha IConvertidorFecha = new ConvertidorFecha();
+
             //Atributos.
             List<PaqueteriaDTO> lstPaqueteriaDTO = new List<PaqueteriaDTO>();
             DateTime dtActual;
             TimeSpan tsDiferencia = new TimeSpan();
+            List<IEmpresaPaqueteria> lstEmpresaPaqueteria = new List<IEmpresaPaqueteria>();
             string cMensaje = string.Empty;
             bool lExisteEmpresaPaqueteria = false;
             bool lExisteMedioTransporte = false;
+
+            lstEmpresaPaqueteria.Add(IEmpresaDHL);
+            lstEmpresaPaqueteria.Add(IEmpresaEstafeta);
+            lstEmpresaPaqueteria.Add(IEmpresaFedex);
 
             foreach (string cLineaArchivo in _lstContenidoArchivo)
             {
                 if (!string.IsNullOrWhiteSpace(cLineaArchivo))
                 {
-                    dtActual = DateTime.Now;
-                    dtoPaqueteria.cNombreLugarOrigen = cLineaArchivo.Split(',')[0];
-                    dtoPaqueteria.cNombreLugarDestino = cLineaArchivo.Split(',')[1];
-                    dtoPaqueteria.dDistancia = decimal.Parse(cLineaArchivo.Split(',')[2]);
-                    dtoPaqueteria.cNombreEmpresa = cLineaArchivo.Split(',')[3];
-                    dtoPaqueteria.cNombreMedioTransporte = cLineaArchivo.Split(',')[4];
-                    dtoPaqueteria.dtPedido = Convert.ToDateTime(cLineaArchivo.Split(',')[5]);
+                    string[] arrLineaArchivoSplit = cLineaArchivo.Split(',');
+                    dtActual = IConvertidorFecha.ConvertirFecha("2020/03/01");
+                    dtoPaqueteria.cNombreLugarOrigen = arrLineaArchivoSplit[0];
+                    dtoPaqueteria.cNombreLugarDestino = arrLineaArchivoSplit[1];
+                    dtoPaqueteria.dDistancia = decimal.Parse(arrLineaArchivoSplit[2]);
+                    dtoPaqueteria.cNombreEmpresa = IFormatoTexto.AplicarFormato(arrLineaArchivoSplit[3]);
+                    dtoPaqueteria.cNombreMedioTransporte = IFormatoTexto.AplicarFormato(arrLineaArchivoSplit[4]);
+                    dtoPaqueteria.dtPedido = Convert.ToDateTime(arrLineaArchivoSplit[5]);
 
-                    IBuscadorEmpresaPaqueteria = new BuscadorEmpresaPaqueteria(null);
-                    dtoPaqueteria.lstNombreEmpresaPaqueteria = IBuscadorEmpresaPaqueteria.BuscarListaEmpresaPaqueteria();
                     IValidadorEmpresaPaqueteria = new ValidarEmpresaPaqueteria();
-                    lExisteEmpresaPaqueteria = IValidadorEmpresaPaqueteria.ValidarExistenciaEmpresaPaqueteria(dtoPaqueteria.lstNombreEmpresaPaqueteria, dtoPaqueteria.cNombreEmpresa);
+                    lExisteEmpresaPaqueteria = IValidadorEmpresaPaqueteria.ValidarExistenciaEmpresaPaqueteria(lstEmpresaPaqueteria.Select(s=>s.cNombreEmpresa).ToList(), dtoPaqueteria.cNombreEmpresa);
                     IObtenerMensaje = new ObtenerMensajeEmpresaPaqueteria(dtoPaqueteria, lExisteEmpresaPaqueteria);
                     cMensaje = IObtenerMensaje.ObtenerMensaje();
                     ColorearMensajeError(cMensaje);
+                    IEmpresaPaqueteria IEmpresaPaqueteria = lstEmpresaPaqueteria.Where(w => w.cNombreEmpresa == dtoPaqueteria.cNombreEmpresa).FirstOrDefault();
 
                     if (string.IsNullOrWhiteSpace(cMensaje))
                     {
-
-                        IBuscadorMedioTransporte = new BuscadorMedioTransporte();
-                        dtoPaqueteria.lstNombreMedioTransporte = IBuscadorMedioTransporte.BuscarListaMedioTransportePorEmpresa(dtoPaqueteria.cNombreEmpresa);
                         IValidadorMedioTransporte = new ValidarMedioTransporte();
-                        lExisteMedioTransporte = IValidadorMedioTransporte.ValidarExistenciaMedioTranporte(dtoPaqueteria.lstNombreMedioTransporte, dtoPaqueteria.cNombreMedioTransporte);
+                        lExisteMedioTransporte = IValidadorMedioTransporte.ValidarExistenciaMedioTranporte(IEmpresaPaqueteria.lstMediosTransportes.Select(s=>s.cNombreMedioTransporte).ToList(), dtoPaqueteria.cNombreMedioTransporte);
                         IObtenerMensaje = new ObtenerMensajeMedioTransporte(dtoPaqueteria, lExisteMedioTransporte);
                         cMensaje = IObtenerMensaje.ObtenerMensaje();
                         ColorearMensajeError(cMensaje);
@@ -74,23 +86,23 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
 
                     if (string.IsNullOrWhiteSpace(cMensaje))
                     {
-                        IAsignadorDatosPaquete = new AsignarDatosPaquete();
-                        dtoPaqueteriaActualizado = IAsignadorDatosPaquete.AsignarNuevosDatos(dtoPaqueteria);//Patrón de diseño: Constructor.
+                        
+                        IEmpresaPaqueteria.AsignarNuevosDatos(ref dtoPaqueteria);
+                        dtoPaqueteriaActualizado = dtoPaqueteria;
 
                         tsDiferencia = (dtActual - dtoPaqueteriaActualizado.dtEntrega);
                         srvManejadorRangoTiempoMeses = new ManejadorRangoTiempoMeses();
                         srvManejadorRangoTiempoMeses.AsignarSiguienteRangoTiempo(srvManejadorRangoTiempoDias);
+                        srvManejadorRangoTiempoDias.AsignarSiguienteRangoTiempo(srvManejadorRangoTiempoHoras);
+                        srvManejadorRangoTiempoHoras.AsignarSiguienteRangoTiempo(srvManejadorRangoTiempoMinutos);
                         dtoPaqueteria.cRangoTiempo = srvManejadorRangoTiempoMeses.ObtenerRangoTiempo(tsDiferencia);//Patrón de diseño: Cadena de Responsabilidad.
 
                         IObtenerMensaje = new ObtenerMensajePaquete(dtoPaqueteriaActualizado, dtActual);
                         cMensaje = IObtenerMensaje.ObtenerMensaje();
                         ColorearMensajePaquete(dtoPaqueteriaActualizado, dtActual, cMensaje);//Patrón de diseño: Estrategia.
 
-                        IBuscadorMedioTransporte = new BuscadorMedioTransporte();
-                        lstPaqueteriaDTO = IBuscadorMedioTransporte.BuscarListaMedioTransporteConEmpresa();
                         IBuscadorEmpresaPaqueteria = new BuscadorEmpresaPaqueteria(dtoPaqueteria);
-                        dtoPaqueteriaEconomica = IBuscadorEmpresaPaqueteria.BuscarEmpresaPaqueteriaEconomica(lstPaqueteriaDTO);
-
+                        dtoPaqueteriaEconomica = IBuscadorEmpresaPaqueteria.BuscarEmpresaPaqueteriaEconomica(lstEmpresaPaqueteria);
 
                         if (!string.IsNullOrWhiteSpace(dtoPaqueteriaEconomica.cNombreEmpresa))
                         {

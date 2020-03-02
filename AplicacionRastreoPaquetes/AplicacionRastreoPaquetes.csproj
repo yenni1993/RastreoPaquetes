@@ -43,31 +43,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\Interface\IConvertidorFecha.cs" />
+    <Compile Include="Business\Interface\IFormatoTexto.cs" />
+    <Compile Include="Business\Servicio\ConvertidorFecha.cs" />
+    <Compile Include="Business\Servicio\TransporteBarco.cs" />
+    <Compile Include="Business\Servicio\TransporteAvion.cs" />
+    <Compile Include="Business\Servicio\EmpresaDHL.cs" />
+    <Compile Include="Business\Servicio\EmpresaEstafeta.cs" />
+    <Compile Include="Business\Servicio\EmpresaFedex.cs" />
+    <Compile Include="Business\Interface\IEmpresaPaqueteria.cs" />
+    <Compile Include="Business\Interface\IMedioTransporte.cs" />
+    <Compile Include="Business\Servicio\FormatoTexto.cs" />
+    <Compile Include="Business\Servicio\TransporteTren.cs" />
     <Compile Include="Business\DTO\PaqueteriaDTO.cs" />
-    <Compile Include="Business\Enum\EnumEmpresaPaqueteria.cs" />
-    <Compile Include="Business\Enum\EnumMedioTransporte.cs" />
-    <Compile Include="Business\Interface\IAsignadorDatosPaquete.cs" />
     <Compile Include="Business\Interface\IBuscadorEmpresaPaqueteria.cs" />
-    <Compile Include="Business\Interface\IBuscadorMedioTransporte.cs" />
     <Compile Include="Business\Interface\IColorMensaje.cs" />
-    <Compile Include="Business\Interface\IConstructorPaquete.cs" />
     <Compile Include="Business\Interface\IManejadorRangoTiempo.cs" />
     <Compile Include="Business\Interface\IObtenerMensaje.cs" />
     <Compile Include="Business\Interface\IValidadorMedioTransporte.cs" />
     <Compile Include="Business\Interface\IValidadorEmpresaPaqueteria.cs" />
     <Compile Include="Business\Interface\ILectorArchivo.cs" />
-    <Compile Include="Business\Servicio\AsignarDatosPaquete.cs" />
     <Compile Include="Business\Servicio\BuscadorEmpresaPaqueteria.cs" />
-    <Compile Include="Business\Servicio\BuscadorMedioTransporte.cs" />
     <Compile Include="Business\Servicio\ColorMensaje.cs" />
     <Compile Include="Business\Servicio\ColorMensajeAmarillo.cs" />
     <Compile Include="Business\Servicio\ColorMensajeRojo.cs" />
     <Compile Include="Business\Servicio\ColorMensajeVerde.cs" />
-    <Compile Include="Business\Servicio\ConstructorPaqueteDhlAvion.cs" />
-    <Compile Include="Business\Servicio\ConstructorPaqueteDhlBarco.cs" />
-    <Compile Include="Business\Servicio\DirectorEmpresa.cs" />
-    <Compile Include="Business\Servicio\ConstructorPaqueteEstafetaTren.cs" />
-    <Compile Include="Business\Servicio\ConstructorPaqueteFedexBarco.cs" />
     <Compile Include="Business\Servicio\LeerArchivo.cs" />
     <Compile Include="Business\Servicio\Cliente.cs" />
     <Compile Include="Business\Servicio\ManejadorRangoTiempo.cs" />
@@ -78,10 +78,6 @@
     <Compile Include="Business\Servicio\ObtenerMensajeEmpresaPaqueteriaEconomica.cs" />
     <Compile Include="Business\Servicio\ObtenerMensajeMedioTransporte.cs" />
     <Compile Include="Business\Servicio\ObtenerMensajePaquete.cs" />
-    <Compile Include="Business\Servicio\PaqueteDhlAvion.cs" />
-    <Compile Include="Business\Servicio\PaqueteDhlBarco.cs" />
-    <Compile Include="Business\Servicio\PaqueteEstafetaTren.cs" />
-    <Compile Include="Business\Servicio\PaqueteFedexBarco.cs" />
     <Compile Include="Business\Servicio\ManejadorRangoTiempoMeses.cs" />
     <Compile Include="Business\Servicio\ValidarEmpresaPaqueteria.cs" />
     <Compile Include="Business\Servicio\ValidarMedioTransporte.cs" />
@@ -91,5 +87,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

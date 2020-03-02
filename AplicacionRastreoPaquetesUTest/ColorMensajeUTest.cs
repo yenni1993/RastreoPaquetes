@@ -9,7 +9,7 @@ namespace AplicacionRastreoPaquetesUTest
     {
         [TestMethod]
         [TestCategory("Pruebas Unitarias")]
-        public void AgregarColorMensaje_ColorAmarilloMensaje_AsignarColorAmarilloMensaje()
+        public void AgregarColorMensaje_EnviarColorAmarilloMensaje_AsignarColorAmarilloMensaje()
         {
             //Arrange
             //Variables necesarias para realizar las pruebas.
@@ -29,7 +29,7 @@ namespace AplicacionRastreoPaquetesUTest
 
         [TestMethod]
         [TestCategory("Pruebas Unitarias")]
-        public void AgregarColorMensaje_ColorRojoMensaje_AsignarColorRojoMensaje()
+        public void AgregarColorMensaje_EnviarColorRojoMensaje_AsignarColorRojoMensaje()
         {
             //Arrange
             //Variables necesarias para realizar las pruebas.
@@ -49,7 +49,7 @@ namespace AplicacionRastreoPaquetesUTest
 
         [TestMethod]
         [TestCategory("Pruebas Unitarias")]
-        public void AgregarColorMensaje_ColorVerdeMensaje_AsignarColorVerdeMensaje()
+        public void AgregarColorMensaje_EnviarColorVerdeMensaje_AsignarColorVerdeMensaje()
         {
             //Arrange
             //Variables necesarias para realizar las pruebas.

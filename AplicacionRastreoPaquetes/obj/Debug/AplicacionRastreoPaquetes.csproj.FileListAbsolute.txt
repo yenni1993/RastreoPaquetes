@@ -19,3 +19,10 @@ C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreo
 C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetes\obj\Debug\AplicacionRastreoPaquetes.csproj.CoreCompileInputs.cache
 C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetes\obj\Debug\AplicacionRastreoPaquetes.exe
 C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes\AplicacionRastreoPaquetes\obj\Debug\AplicacionRastreoPaquetes.pdb
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes - copia\AplicacionRastreoPaquetes\obj\Debug\AplicacionRastreoPaquetes.csproj.CoreCompileInputs.cache
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes - copia\AplicacionRastreoPaquetes\obj\Debug\AplicacionRastreoPaquetes.exe
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes - copia\AplicacionRastreoPaquetes\obj\Debug\AplicacionRastreoPaquetes.pdb
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes - copia\AplicacionRastreoPaquetes\bin\Debug\AplicacionRastreoPaquetes.exe.config
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes - copia\AplicacionRastreoPaquetes\bin\Debug\AplicacionRastreoPaquetes.exe
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes - copia\AplicacionRastreoPaquetes\bin\Debug\AplicacionRastreoPaquetes.pdb
+C:\Users\yenni.canul\AplicacionRastreoPaquetes\RastreoPaquetes - copia\AplicacionRastreoPaquetes\obj\Debug\AplicacionRastreoPaquetes.csprojAssemblyReference.cache

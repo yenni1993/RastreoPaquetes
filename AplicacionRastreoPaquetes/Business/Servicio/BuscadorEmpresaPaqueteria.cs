@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AplicacionRastreoPaquetes.Business.DTO;
-using AplicacionRastreoPaquetes.Business.Enum;
 using AplicacionRastreoPaquetes.Business.Interface;
 
 namespace AplicacionRastreoPaquetes.Business.Servicio
@@ -23,45 +23,49 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
         }
 
         /// <summary>
-        /// Método que permite buscar la paquetería más económica.
+        /// Método que permite buscar la empresa de paquetería más económica.
         /// </summary>
-        /// <param name="lstPaqueteriaDTO">Lista de paqueterías a comparar sus precios económicos.</param>
-        /// <returns>DTO con los datos de la paquetería con el precio más económico.</returns>
-        public PaqueteriaDTO BuscarEmpresaPaqueteriaEconomica(List<PaqueteriaDTO> _lstPaqueteriaDTO)
+        /// <param name="lstEmpresaPaqueteria">Lista de empresas de paqueterías para comparar sus precios económicos.</param>
+        /// <returns>DTO con los datos de la empresa de paquetería con el precio más económico.</returns>
+        public PaqueteriaDTO BuscarEmpresaPaqueteriaEconomica(List<IEmpresaPaqueteria> lstEmpresaPaqueteria)
         {
             PaqueteriaDTO dtoPaqueteriaSiguiente = new PaqueteriaDTO();
             PaqueteriaDTO dtoPaqueteriaMenorCosto = new PaqueteriaDTO();
             decimal dDiferenciaCostoEnvio = 0.0M;
 
-            foreach (PaqueteriaDTO dtoPaqueteriaEconomica in _lstPaqueteriaDTO)
+            foreach (IEmpresaPaqueteria dtoPaqueteriaEconomica in lstEmpresaPaqueteria)
             {
                 if (dtoPaqueteriaEconomica.cNombreEmpresa != this.dtoPaqueteria.cNombreEmpresa)
                 {
-                    if (dtoPaqueteriaEconomica.lstNombreMedioTransporte.Contains(this.dtoPaqueteria.cNombreMedioTransporte))
+                    List<IMedioTransporte> lstMedioTransporte = dtoPaqueteriaEconomica.lstMediosTransportes.Where(w => w.cNombreMedioTransporte == this.dtoPaqueteria.cNombreMedioTransporte).ToList();
+
+                    if (lstMedioTransporte.Any())
                     {
-                        dtoPaqueteriaSiguiente.cNombreEmpresa = dtoPaqueteriaEconomica.cNombreEmpresa;
-                        dtoPaqueteriaSiguiente.cNombreLugarOrigen = this.dtoPaqueteria.cNombreLugarOrigen;
-                        dtoPaqueteriaSiguiente.cNombreLugarDestino = this.dtoPaqueteria.cNombreLugarDestino;
-                        dtoPaqueteriaSiguiente.dDistancia = this.dtoPaqueteria.dDistancia;
-                        dtoPaqueteriaSiguiente.cNombreMedioTransporte = this.dtoPaqueteria.cNombreMedioTransporte;
-                        dtoPaqueteriaSiguiente.dtPedido = this.dtoPaqueteria.dtPedido;
-
-                        AsignarDatosPaquete srvAsignarDatosPaquete = new AsignarDatosPaquete();
-                        dtoPaqueteriaSiguiente = srvAsignarDatosPaquete.AsignarNuevosDatos(dtoPaqueteriaSiguiente);
-                        dDiferenciaCostoEnvio = Math.Abs(this.dtoPaqueteria.dCostoEnvio - dtoPaqueteriaSiguiente.dCostoEnvio);
-
-                        if (string.IsNullOrWhiteSpace(dtoPaqueteriaMenorCosto.cNombreEmpresa))
+                        foreach (IMedioTransporte mt in lstMedioTransporte)
                         {
-                            if (this.dtoPaqueteria.dCostoEnvio > dtoPaqueteriaSiguiente.dCostoEnvio)
+                            dtoPaqueteriaSiguiente.cNombreEmpresa = dtoPaqueteriaEconomica.cNombreEmpresa;
+                            dtoPaqueteriaSiguiente.cNombreLugarOrigen = this.dtoPaqueteria.cNombreLugarOrigen;
+                            dtoPaqueteriaSiguiente.cNombreLugarDestino = this.dtoPaqueteria.cNombreLugarDestino;
+                            dtoPaqueteriaSiguiente.dDistancia = this.dtoPaqueteria.dDistancia;
+                            dtoPaqueteriaSiguiente.cNombreMedioTransporte = this.dtoPaqueteria.cNombreMedioTransporte;
+                            dtoPaqueteriaSiguiente.dtPedido = this.dtoPaqueteria.dtPedido;
+
+                            dtoPaqueteriaEconomica.AsignarNuevosDatos(ref dtoPaqueteriaSiguiente);
+                            dDiferenciaCostoEnvio = Math.Abs(this.dtoPaqueteria.dCostoEnvio - dtoPaqueteriaSiguiente.dCostoEnvio);
+
+                            if (string.IsNullOrWhiteSpace(dtoPaqueteriaMenorCosto.cNombreEmpresa))
                             {
-                                dtoPaqueteriaMenorCosto = dtoPaqueteriaSiguiente;
+                                if (this.dtoPaqueteria.dCostoEnvio > dtoPaqueteriaSiguiente.dCostoEnvio)
+                                {
+                                    dtoPaqueteriaMenorCosto = dtoPaqueteriaSiguiente;
+                                }
                             }
-                        }
-                        else
-                        {
-                            if (dtoPaqueteriaMenorCosto.dCostoEnvio > dtoPaqueteriaSiguiente.dCostoEnvio)
+                            else
                             {
-                                dtoPaqueteriaMenorCosto = dtoPaqueteriaSiguiente;
+                                if (dtoPaqueteriaMenorCosto.dCostoEnvio > dtoPaqueteriaSiguiente.dCostoEnvio)
+                                {
+                                    dtoPaqueteriaMenorCosto = dtoPaqueteriaSiguiente;
+                                }
                             }
                         }
                     }
@@ -70,22 +74,6 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
 
             dtoPaqueteriaMenorCosto.dCostoEnvio = dDiferenciaCostoEnvio;
             return dtoPaqueteriaMenorCosto;
-        }
-
-        /// <summary>
-        /// Método que permite buscar una lista de empresas de paqueterías.
-        /// </summary>
-        /// <returns>Lista con los nombres de las empresas de paqueterías.</returns>
-        public List<string> BuscarListaEmpresaPaqueteria()
-        {
-            List<string> lstNombreEmpresaPaqueteria = new List<string>();
-
-            lstNombreEmpresaPaqueteria.Add(EnumEmpresaPaqueteria.DHL.ToString());
-            lstNombreEmpresaPaqueteria.Add(EnumEmpresaPaqueteria.Estafeta.ToString());
-            lstNombreEmpresaPaqueteria.Add(EnumEmpresaPaqueteria.Fedex.ToString());
-
-            return lstNombreEmpresaPaqueteria;
-
         }
     }
 }

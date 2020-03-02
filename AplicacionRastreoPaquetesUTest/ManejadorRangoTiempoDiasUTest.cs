@@ -14,12 +14,12 @@ namespace AplicacionRastreoPaquetesUTest
         {
             //Arrange
             //Variables necesarias para realizar las pruebas.
-            IManejadorRangoTiempo IManejadorRangoTiempoDias = new ManejadorRangoTiempoDias();
+            IManejadorRangoTiempo SUT = new ManejadorRangoTiempoDias();
             IManejadorRangoTiempo IManejadorRangoTiempoHoras = new ManejadorRangoTiempoHoras();
 
             //Act
             //Método que será sometido a pruebas.
-            IManejadorRangoTiempoDias.AsignarSiguienteRangoTiempo(IManejadorRangoTiempoHoras);
+            SUT.AsignarSiguienteRangoTiempo(IManejadorRangoTiempoHoras);
 
             //Assert
             //Validación de valores esperados.

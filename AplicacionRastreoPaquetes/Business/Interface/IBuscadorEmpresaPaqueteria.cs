@@ -9,16 +9,10 @@ namespace AplicacionRastreoPaquetes.Business.Interface
     public interface IBuscadorEmpresaPaqueteria
     {
         /// <summary>
-        /// Método que permite buscar una lista de empresas de paqueterías.
+        /// Método que permite buscar la empresa de paquetería más económica.
         /// </summary>
-        /// <returns>Lista con los nombres de las empresas de paqueterías.</returns>
-        List<string> BuscarListaEmpresaPaqueteria();
-
-        /// <summary>
-        /// Método que permite buscar la paquetería más económica.
-        /// </summary>
-        /// <param name="lstPaqueteriaDTO">Lista de paqueterías a comparar sus precios económicos.</param>
-        /// <returns>DTO con los datos de la paquetería con el precio más económico.</returns>
-        PaqueteriaDTO BuscarEmpresaPaqueteriaEconomica(List<PaqueteriaDTO> lstPaqueteriaDTO);
+        /// <param name="lstEmpresaPaqueteria">Lista de empresas de paqueterías para comparar sus precios económicos.</param>
+        /// <returns>DTO con los datos de la empresa de paquetería con el precio más económico.</returns>
+        PaqueteriaDTO BuscarEmpresaPaqueteriaEconomica(List<IEmpresaPaqueteria> lstEmpresaPaqueteria);
     }
 }

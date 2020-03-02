@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 
 namespace AplicacionRastreoPaquetes.Business.Servicio
 {
@@ -21,7 +22,7 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
 
             try
             {
-                StreamReader stArchivo = new StreamReader(File.OpenRead(_cRuta));
+                StreamReader stArchivo = new StreamReader(File.OpenRead(_cRuta), Encoding.Default);
 
                 while (!stArchivo.EndOfStream)
                 {
