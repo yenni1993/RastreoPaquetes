@@ -7,6 +7,10 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
     /// </summary>
     public class ManejadorRangoTiempoHoras : ManejadorRangoTiempo
     {
+        private string _cArchivo = "Horas.txt";
+
+        public override string cArchivo { get { return _cArchivo; } set { base.cArchivo = value; } }
+
         /// <summary>
         /// Método sobreescrito que permite obtener el rango del tiempo en horas.
         /// </summary>

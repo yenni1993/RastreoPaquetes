@@ -7,6 +7,10 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
     /// </summary>
     public class ManejadorRangoTiempoMeses : ManejadorRangoTiempo
     {
+        private string _cArchivo = "Meses.txt";
+
+        public override string cArchivo { get { return _cArchivo; } set { base.cArchivo = value; } }
+
         /// <summary>
         /// Método sobreescrito que permite obtener el rango del tiempo en meses.
         /// </summary>

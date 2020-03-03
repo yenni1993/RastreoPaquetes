@@ -8,6 +8,8 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
     /// </summary>
     public abstract class ManejadorRangoTiempo : IManejadorRangoTiempo
     {
+        public virtual string cArchivo { get; set; }
+
         private IManejadorRangoTiempo IManejadorSiguiente;
 
         /// <summary>

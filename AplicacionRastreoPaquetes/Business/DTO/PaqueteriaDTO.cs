@@ -5,6 +5,11 @@ namespace AplicacionRastreoPaquetes.Business.DTO
     public class PaqueteriaDTO
     {
         /// <summary>
+        /// Indica si es pasado o no el pedido.
+        /// </summary>
+        public bool lEsPasado { get; set; }
+
+        /// <summary>
         /// Nombre de una empresa de paquetería.
         /// </summary>
         public string cNombreEmpresa { get; set; }

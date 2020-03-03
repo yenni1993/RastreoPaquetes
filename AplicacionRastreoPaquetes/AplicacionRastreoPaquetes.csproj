@@ -44,8 +44,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\Interface\IConvertidorFecha.cs" />
+    <Compile Include="Business\Interface\ICreadorArchivo.cs" />
+    <Compile Include="Business\Interface\ICreadorDirectorio.cs" />
+    <Compile Include="Business\Interface\ICreadorSubdirectorio.cs" />
     <Compile Include="Business\Interface\IFormatoTexto.cs" />
+    <Compile Include="Business\Interface\IEscrituraArchivo.cs" />
     <Compile Include="Business\Servicio\ConvertidorFecha.cs" />
+    <Compile Include="Business\Servicio\CreadorArchivo.cs" />
+    <Compile Include="Business\Servicio\CreadorDirectorio.cs" />
+    <Compile Include="Business\Servicio\CreadorSubdirectorio.cs" />
+    <Compile Include="Business\Servicio\EscrituraArchivo.cs" />
+    <Compile Include="Business\Servicio\ManejadorRangoTiempoAnios.cs" />
+    <Compile Include="Business\Servicio\ManejadorRangoTiempoBimestres.cs" />
+    <Compile Include="Business\Servicio\ManejadorRangoTiempoSemanas.cs" />
     <Compile Include="Business\Servicio\TransporteBarco.cs" />
     <Compile Include="Business\Servicio\TransporteAvion.cs" />
     <Compile Include="Business\Servicio\EmpresaDHL.cs" />

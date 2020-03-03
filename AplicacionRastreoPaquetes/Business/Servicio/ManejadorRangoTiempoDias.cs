@@ -7,6 +7,10 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
     /// </summary>
     public class ManejadorRangoTiempoDias : ManejadorRangoTiempo
     {
+        private string _cArchivo = "Dias.txt";
+
+        public override string cArchivo { get { return _cArchivo; } set { base.cArchivo = value; } }
+
         /// <summary>
         /// Método sobreescrito que permite obtener el rango del tiempo en días.
         /// </summary>
@@ -27,6 +31,7 @@ namespace AplicacionRastreoPaquetes.Business.Servicio
             }
             else
             {
+                base.cArchivo = string.Empty;
                 cRangoTiempo = base.ObtenerRangoTiempo(_tsDiferenciaFecha);
             }
 

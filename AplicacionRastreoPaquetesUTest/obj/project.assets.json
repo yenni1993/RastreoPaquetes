@@ -5954,11 +5954,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yenni.canul\\AplicacionRastreoPaquetes\\RastreoPaquetes - copia\\AplicacionRastreoPaquetesUTest\\AplicacionRastreoPaquetesUTest.csproj",
+      "projectUniqueName": "C:\\Users\\yenni.canul\\AplicacionRastreoPaquetes\\RastreoPaquetes\\AplicacionRastreoPaquetesUTest\\AplicacionRastreoPaquetesUTest.csproj",
       "projectName": "AplicacionRastreoPaquetesUTest",
-      "projectPath": "C:\\Users\\yenni.canul\\AplicacionRastreoPaquetes\\RastreoPaquetes - copia\\AplicacionRastreoPaquetesUTest\\AplicacionRastreoPaquetesUTest.csproj",
+      "projectPath": "C:\\Users\\yenni.canul\\AplicacionRastreoPaquetes\\RastreoPaquetes\\AplicacionRastreoPaquetesUTest\\AplicacionRastreoPaquetesUTest.csproj",
       "packagesPath": "C:\\Users\\yenni.canul\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yenni.canul\\AplicacionRastreoPaquetes\\RastreoPaquetes - copia\\AplicacionRastreoPaquetesUTest\\obj\\",
+      "outputPath": "C:\\Users\\yenni.canul\\AplicacionRastreoPaquetes\\RastreoPaquetes\\AplicacionRastreoPaquetesUTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5978,8 +5978,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\yenni.canul\\AplicacionRastreoPaquetes\\RastreoPaquetes - copia\\AplicacionRastreoPaquetes\\AplicacionRastreoPaquetes.csproj": {
-              "projectPath": "C:\\Users\\yenni.canul\\AplicacionRastreoPaquetes\\RastreoPaquetes - copia\\AplicacionRastreoPaquetes\\AplicacionRastreoPaquetes.csproj"
+            "C:\\Users\\yenni.canul\\AplicacionRastreoPaquetes\\RastreoPaquetes\\AplicacionRastreoPaquetes\\AplicacionRastreoPaquetes.csproj": {
+              "projectPath": "C:\\Users\\yenni.canul\\AplicacionRastreoPaquetes\\RastreoPaquetes\\AplicacionRastreoPaquetes\\AplicacionRastreoPaquetes.csproj"
             }
           }
         }
